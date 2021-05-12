@@ -43,6 +43,11 @@ public:
     cout<<name<<"\n"<<place<<"\nMaximum Students = "<<maxStudent;
   }
   void displayName();
+
+
+private:
+  string LibraryBooks;
+
 };
 
 // Method/function definition outside the class
@@ -69,6 +74,8 @@ public:
     cout<<name<<"\n"<<"Class - "<<standard<<"\nAge - "<<age;
   }
 
+private:
+  int dues;
 
 };
 
