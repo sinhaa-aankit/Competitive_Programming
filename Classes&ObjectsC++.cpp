@@ -29,11 +29,16 @@ using namespace std;
 
 class School{
 public:
-  string name;
+  string name; 
   string place;
+  int maxStudent;
+
+  void maxStudents(int number){
+    maxStudent = number;
+  }
 
   void display(){
-    cout<<name<<"\n"<<place;
+    cout<<name<<"\n"<<place<<"\n Maximum Students = "<<maxStudent;
   }
   void displayName();
 };
@@ -57,6 +62,7 @@ cin.tie(NULL);cout.tie(NULL);
   School s;
   s.name = "Bal Bharti Public School";
   s.place = "Bherwa";
+  s.maxStudents(200);
 
   s.display();
   s.displayName();
