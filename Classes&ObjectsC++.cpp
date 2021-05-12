@@ -35,7 +35,13 @@ public:
   void display(){
     cout<<name<<"\n"<<place;
   }
+  void displayName();
 };
+
+// Method/function definition outside the class
+void School::displayName() {
+  cout << "\n"<<name;
+}
 
 
 int main(void)
@@ -48,11 +54,12 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);cout.tie(NULL);
 
   //code goes down here
-	School s;
+  School s;
   s.name = "Bal Bharti Public School";
   s.place = "Bherwa";
 
   s.display();
+  s.displayName();
 
-	
+  
 }
