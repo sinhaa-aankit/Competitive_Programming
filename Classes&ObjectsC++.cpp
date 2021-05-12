@@ -33,20 +33,44 @@ public:
   string place;
   int maxStudent;
 
+
+  //method with parameters
   void maxStudents(int number){
     maxStudent = number;
   }
 
   void display(){
-    cout<<name<<"\n"<<place<<"\n Maximum Students = "<<maxStudent;
+    cout<<name<<"\n"<<place<<"\nMaximum Students = "<<maxStudent;
   }
   void displayName();
 };
 
 // Method/function definition outside the class
 void School::displayName() {
-  cout << "\n"<<name;
+  cout << "\nDisplayed from outside the class - "<<name;
 }
+
+
+class Students{
+public:
+  string name;
+  string standard;
+  int age;
+
+  //Constructor
+  Students(string name,string standard, int age){
+
+    //this-> refers to the upper defined name outside from function.
+    this->name = name;
+    this->standard = standard;
+    this->age = age;
+  }
+  void display(){
+    cout<<name<<"\n"<<"Class - "<<standard<<"\nAge - "<<age;
+  }
+
+
+};
 
 
 int main(void)
@@ -65,7 +89,12 @@ cin.tie(NULL);cout.tie(NULL);
   s.maxStudents(200);
 
   s.display();
-  s.displayName();
+  // s.displayName();
+
+  cout<<"\n\n";
+
+  Students st("PARI", "U.K.G", 6);
+  st.display();
 
   
 }
