@@ -48,7 +48,6 @@ int Counting_Ones(int n, vector<int> &v, int x){
 
   free(&v);
 
-
   return Counting_Ones(n,v2,x-1);
   
 }
