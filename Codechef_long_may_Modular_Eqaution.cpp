@@ -22,34 +22,12 @@
 
 using namespace std;
 
+typedef unsigned long long ull;
+
 #define ll long long int
-#define ull unsigned long long 
+// #define ull unsigned long long 
 #define mod 1000000007
 
-
-int Counting_Ones(int n, vector<int> v, int x){
-  
-  if(x == 0){
-    int Count = 0;
-    for(int i=0; i<n; i++){
-      if(v[i] == 1) Count++;
-    }
-    return Count;
-  }
-
-  vector<int> v2 (n);
-
-  for(int i = 1; i<n-1; i++){
-    if(v[i-1] == v[i+1]) v2[i] = 1;
-    else v2[i] = 0;
-  }
-
-  v2[0] = v2[n-1] = 0;
- 
-
-  return Counting_Ones(n,v2,x-1);
-  
-}
 
 
 int main(void)
@@ -62,13 +40,20 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);cout.tie(NULL);
 
   //code goes down here
-  int n; cin>>n;
-  std::vector<int> v(n);
-  for(int i=0; i<n; i++){
-    cin>>v[i];
-  }
-  int x; cin>>x;
-
-  cout<<Counting_Ones(n,v,x);
-  
+  int t; cin>>t;
+  while(t--){
+    ull n,m; cin>>n>>m;
+    ull ans = 0;
+    vector<ull> v(n+1, 1);
+    for(ull i=2; i<=n; i++){
+      ull a = m%i;
+      ans += v[a]; 
+      for(ull j = a; j<=n; j+=i){
+        v[j]++;
+      }
+    }
+    cout<<ans<<"\n";
+  }   
+	
+	
 }

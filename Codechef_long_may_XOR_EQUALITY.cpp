@@ -26,31 +26,19 @@ using namespace std;
 #define ull unsigned long long 
 #define mod 1000000007
 
-
-int Counting_Ones(int n, vector<int> v, int x){
-  
-  if(x == 0){
-    int Count = 0;
-    for(int i=0; i<n; i++){
-      if(v[i] == 1) Count++;
-    }
-    return Count;
-  }
-
-  vector<int> v2 (n);
-
-  for(int i = 1; i<n-1; i++){
-    if(v[i-1] == v[i+1]) v2[i] = 1;
-    else v2[i] = 0;
-  }
-
-  v2[0] = v2[n-1] = 0;
- 
-
-  return Counting_Ones(n,v2,x-1);
-  
+int modularExp(long long x, unsigned int y, int p){
+	int res = 1;
+	x = x%p;
+	if(x==0) return 0;
+	while(y>0){
+		if(y & 1){
+			res = (res*x) % p;
+		}
+		y = y>>1;
+		x = (x*x) % p;
+	}
+	return res;
 }
-
 
 int main(void)
 {
@@ -62,13 +50,12 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);cout.tie(NULL);
 
   //code goes down here
-  int n; cin>>n;
-  std::vector<int> v(n);
-  for(int i=0; i<n; i++){
-    cin>>v[i];
+  int t; cin>>t;
+  while(t--){
+  	unsigned int n; cin>>n;
+  	cout<<modularExp(2,n-1,1000000007)<<"\n";
   }
-  int x; cin>>x;
 
-  cout<<Counting_Ones(n,v,x);
-  
+	
+	
 }
