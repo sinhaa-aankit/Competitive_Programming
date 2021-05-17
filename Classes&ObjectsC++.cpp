@@ -57,10 +57,25 @@ void School::displayName() {
 
 
 class Students{
+private:
+  int dues;
+
 public:
   string name;
   string standard;
   int age;
+
+  //Encapsulation - hiding private var and accessing it by methods or functions;
+
+  //setter
+  void setDues(int n){
+  	dues = n;
+  }
+
+  //getter
+  int getDues(){
+  	return dues;
+  }
 
   //Constructor
   Students(string name,string standard, int age){
@@ -74,8 +89,7 @@ public:
     cout<<name<<"\n"<<"Class - "<<standard<<"\nAge - "<<age;
   }
 
-private:
-  int dues;
+
 
 };
 
@@ -103,5 +117,9 @@ cin.tie(NULL);cout.tie(NULL);
   Students st("PARI", "U.K.G", 6);
   st.display();
 
+  //Encapsulation - accessing getter and setter
+
+  st.setDues(150);
+  cout<<"\n"<<st.getDues();
   
 }
