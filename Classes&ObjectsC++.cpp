@@ -29,8 +29,8 @@ using namespace std;
 
 class School{
 public:
-  string name; 
-  string place;
+  string schoolName = "Bal Bharti Public School"; 
+  string schoolPlace;
   int maxStudent;
 
 
@@ -40,7 +40,7 @@ public:
   }
 
   void display(){
-    cout<<name<<"\n"<<place<<"\nMaximum Students = "<<maxStudent;
+    cout<<schoolName<<"\n"<<schoolPlace<<"\nMaximum Students = "<<maxStudent;
   }
   void displayName();
 
@@ -52,11 +52,11 @@ private:
 
 // Method/function definition outside the class
 void School::displayName() {
-  cout << "\nDisplayed from outside the class - "<<name;
+  cout << "\nDisplayed from outside the class - "<<schoolName;
 }
 
 
-class Students{
+class Students : public School{
 private:
   int dues;
 
@@ -105,8 +105,8 @@ cin.tie(NULL);cout.tie(NULL);
 
   //code goes down here
   School s;
-  s.name = "Bal Bharti Public School";
-  s.place = "Bherwa";
+  // s.schoolName = "Bal Bharti Public School";
+  s.schoolPlace = "Bherwa";
   s.maxStudents(200);
 
   s.display();
@@ -121,5 +121,7 @@ cin.tie(NULL);cout.tie(NULL);
 
   st.setDues(150);
   cout<<"\n"<<st.getDues();
-  
+
+  //Displaying the School Name using Inheritance;
+  cout<<"\n"<<st.schoolName;
 }
