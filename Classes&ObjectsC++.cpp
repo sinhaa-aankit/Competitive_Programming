@@ -55,8 +55,15 @@ void School::displayName() {
   cout << "\nDisplayed from outside the class - "<<schoolName;
 }
 
+class Standard : public School
+{
+public:
+	string standard = "U.K.G";
+	
+};
 
-class Students : public School{
+
+class Students : public Standard{
 private:
   int dues;
 
@@ -89,9 +96,8 @@ public:
     cout<<name<<"\n"<<"Class - "<<standard<<"\nAge - "<<age;
   }
 
-
-
 };
+
 
 
 int main(void)
@@ -124,4 +130,5 @@ cin.tie(NULL);cout.tie(NULL);
 
   //Displaying the School Name using Inheritance;
   cout<<"\n"<<st.schoolName;
+  cout<<"\n"<<st.standard;
 }
