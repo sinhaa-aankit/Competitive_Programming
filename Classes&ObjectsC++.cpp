@@ -129,6 +129,10 @@ cin.tie(NULL);cout.tie(NULL);
   cout<<"\n"<<st.getDues();
 
   //Displaying the School Name using Inheritance;
-  cout<<"\n"<<st.schoolName;
   cout<<"\n"<<st.standard;
+
+  //Multilevel Inheritance
+  cout<<"\n"<<st.schoolName;
+
+  
 }
