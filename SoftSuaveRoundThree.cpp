@@ -50,9 +50,14 @@ cin.tie(NULL);cout.tie(NULL);
         map1[a[i][j]]++;
       }
     }
+    for(int i : s){
+	  	cout<<i<<" ";
+	  }
   }
+  cout<<"\n";
 
   int k; cin>>k;
+
 
   vector<int> v;
   for(auto p : map1){
