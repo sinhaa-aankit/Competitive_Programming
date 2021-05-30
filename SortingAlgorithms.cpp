@@ -81,6 +81,7 @@ void merge(int arr[], int l, int mid, int r){
     }else{
       arr[k++] = b[j++];
     }
+    
   }
   while(i<n1) arr[k++] = a[i++];
   while(j < n2) arr[k++] = b[j++];
