@@ -42,14 +42,24 @@ cin.tie(NULL);cout.tie(NULL);
   
 
   // Create and open a text file - MyFile is like variable for the Test.txt ( created here).
-  ofstream MyFile("Test.txt");
+  // ofstream MyFile("Test.txt");
 
-  //Write to the file;
-  MyFile << "Writing from c++ Program.";
-  MyFile << "Writing 2nd Line from c++ Program";
-  MyFile << "\nWriting 2nd Line in new Line from c++ Program";
+  // //Write to the file;
+  // MyFile << "Writing from c++ Program.";
+  // MyFile << "Writing 2nd Line from c++ Program";
+  // MyFile << "\nWriting 2nd Line in new Line from c++ Program";
 
-  
+  // Create a text string, which is used to output the text file
+  string myText;
+
+  // Read from the text file
+  ifstream MyReadFile("Test.txt");
+
+  // Use a while loop together with the getline() function to read the file line by line
+  while (getline (MyReadFile, myText)) {
+    // Output the text from the file
+    cout << myText<<"\n";
+  }
 
 
   
