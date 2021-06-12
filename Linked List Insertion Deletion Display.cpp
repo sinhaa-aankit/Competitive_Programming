@@ -46,6 +46,13 @@ public:
   }
 };
 
+void InsertAtHead(node* &head, int val){
+  node* New = new node(val);
+  New -> next = head;
+  head = New;
+}
+
+
 void insertAtTail(node* &head, int val){
 
   node* n = new node(val);
