@@ -121,6 +121,41 @@ void display(node* head){
   }
 }
 
+void arrange(node* &head){
+  node* evenHead = NULL;
+  node* evenTail = NULL;
+  node* oddHead = NULL;
+  node* oddTail = NULL;
+  node* temp = head;
+  bool is_odd = 1;
+  while(temp != NULL){
+    if(is_odd){
+      if(temp == NULL){
+        oddHead = oddTail = temp;
+      }else{
+        oddTail->next = temp;
+        oddTail = temp;
+      }
+      temp = temp->next;
+      oddTail -> next = NULL;
+    }else{
+      if(temp == NULL){
+        evenHead = evenTail = temp;
+      }else{
+        evenTail->next = temp;
+        evenTail = temp;
+      }
+      temp = temp->next;
+      evenTail -> next = NULL;
+    }
+    is_odd = !is_odd;
+  }
+  oddTail->next = evenHead;
+  head = oddHead;
+
+
+}
+
 
 int main(void)
 {
