@@ -51,23 +51,29 @@ cin.tie(NULL);cout.tie(NULL);
         }else if(-arrows[i] == s.top()){
           insert = false;
           s.pop();
-        }else{
+        }else if(-arrows[i] < s.top()){
           insert = false;
           break;
         }
       }
       if(insert) s.push(arrows[i]);
-      }
-      else{
-        s.push(arrows[i]);
-      }
     }
-
-  while(!s.empty()){
-    cout<<s.top()<<" ";
-    s.pop();
+    else{
+      s.push(arrows[i]);
+    }
   }
 
+    int k = s.size();
+    int r = k-1;
+    int *arr = new int[k+1];
+    while(!s.empty()){
+        arr[r--] = s.top();
+        s.pop();
+    }
+    for(int i=0; i<k; i++){
+        cout<<arr[i]<<" ";
+    }
+    delete[] arr;
   
     
 }
