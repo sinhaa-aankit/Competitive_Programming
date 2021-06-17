@@ -51,6 +51,7 @@ cin.tie(NULL);cout.tie(NULL);
         }else if(-arrows[i] == s.top()){
           insert = false;
           s.pop();
+          break;
         }else if(-arrows[i] < s.top()){
           insert = false;
           break;
