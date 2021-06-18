@@ -16,20 +16,25 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);cout.tie(NULL);
 
   //code goes down here
-  unordered_map<string, vector<string> > m;
   int n; cin>>n;
+  int arr[n];
   for(int i=0; i<n; i++){
-    string s; cin>>s;
-    string temp = s;
-    sort(temp.begin(), temp.end());
-    m[temp].push_back(s);
+    cin>>arr[i];
   }
-
-  for(auto p : m){
-    for(int i=0; i<p.second.size(); i++){
-      cout<<p.second[i]<<" ";
+  stack<int> s;
+  s.push(arr[0]);
+  int i = 1;
+  int maxm;
+  int ans = 0;
+  while(i<n){
+    if(s.top() > arr[i]){
+      s.push(arr[i]);
+    }else{
+      maxm = arr[i] - s.top();
+      ans = max(ans, maxm);
     }
-    cout<<"\n";
+    i++;
   }
+  cout<<ans;
     
 }
