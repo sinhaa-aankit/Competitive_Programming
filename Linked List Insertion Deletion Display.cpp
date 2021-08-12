@@ -26,15 +26,6 @@ using namespace std;
 #define ull unsigned long long 
 #define mod 1000000007
 
-class Emp{
-private:
-  int salary = 50000;
-public:
-  void showSalary(){
-    cout<<salary;
-  }
-};
-
 class node{
 public:
   int data;
